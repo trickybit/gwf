@@ -16,8 +16,8 @@ Google Web Font LESS mixin
   }
 }
 ```
-[Complete GIST](https://gist.github.com/tappily/bc49577a63757b4f08ed)
-[CodePen](http://codepen.io/tappily/full/bcLKv)
+- [Complete GIST](https://gist.github.com/tappily/bc49577a63757b4f08ed)
+- [CodePen](http://codepen.io/tappily/full/bcLKv)
 
 ##gwf
 Initializes a selector and imports the webfont, encoding entities, like whitespace characters, according to the Google Web Font service API.
