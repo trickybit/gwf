@@ -55,15 +55,23 @@ font-weight: 900;
 - weight{number}
 
 ### rel
-Use relative names from the CSS spec
+Use relative names from the CSS spec to pick the closet match from the initial weights provided to .gwf();
 
 #### input
 ```css
-.gwf.weight.rel(lighter);
+& {
+  .gwf('Lato', sans-serif; 200,400,700);
+  
+  h1 {
+    .gwf.weight.rel(lighter);
+  }
+}
 ```
 #### output
 ```css
-font-weight: 100;
+h1 {
+  font-weight: 200;
+}
 ```
 #### params
 - index {integer}
