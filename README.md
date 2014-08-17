@@ -3,7 +3,22 @@ gwf
 
 Google Web Font LESS mixin
 
+```css
+& {
+  .gwf('Lato', sans-serif; 100,200,400,700,900);
+  
+  body {
+    .gwf.family;
+  }
+  
+  h1 {
+    .gwf.weight.rel(lighter);
+  }
+}
+```
+
 ###gwf
+Initializes a selector and imports the webfont, encoding entities, like whitespace characters, according to the Google Web Font service API.
 
 #### input
 ```css
