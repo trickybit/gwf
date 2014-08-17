@@ -40,6 +40,8 @@ font-weight: 900;
 - weight{number}
 
 ### rel
+Use relative names from the CSS spec
+
 #### input
 ```css
 .gwf.weight.rel(lighter);
@@ -50,8 +52,15 @@ font-weight: 100;
 ```
 #### params
 - index {integer}
+  - lighter
+  - light
+  - normal
+  - bold
+  - bolder
 
 ### name
+Use common typographic names.
+
 #### input
 ```css
 .gwf.weight.name(poster);
@@ -62,3 +71,12 @@ font-weight: 900;
 ```
 #### params
 - name {keyword} 
+  - extralight, ultralight
+  - light, thin
+  - book, demi
+  - normal, regular
+  - medium
+  - semibold, demibold
+  - bold
+  - black, extrabold, heavy
+  - extrablack, fat, poster, ultrablack
