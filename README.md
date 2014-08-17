@@ -3,7 +3,7 @@ gwf
 
 Google Web Font LESS mixin
 
-```css
+```less
 & {
   .gwf('Lato', sans-serif; 100,200,400,700,900);
   
