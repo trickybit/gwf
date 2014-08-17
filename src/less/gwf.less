@@ -1,0 +1,73 @@
+.gwf(@family; @weights:400) {
+  @_family: @family;
+  @_weights: @weights;
+  @family-uri: replace((extract(@_family,1)), ' ', '+', 'g');
+  @weight-uri: replace("@{weights}", ' ', '', 'g');
+  @import (reference) "//fonts.googleapis.com/css?family=@{family-uri}:@{weight-uri}";
+  
+  .family() {
+    font-family: @_family;
+  }
+  
+  .weight(@weight:400) {
+    font-weight: @weight;
+    
+    .name(@name) {
+      & when (@name = extralight), (@name = ultralight) {
+        .weight(100);
+      }
+      & when (@name = light), (@name = thin) {
+        .weight(200);
+      }
+      & when (@name = book), (@name = demi) {
+        .weight(300);
+      }
+      & when (@name = normal), (@name = regular) {
+        .weight(400);
+      }
+      & when (@name = medium) {
+        .weight(500);
+      }
+      & when (@name = semibold), (@name = demibold) {
+        .weight(600);
+      }
+      & when (@name = bold) {
+        .weight(700);
+      }
+      & when (@name = black), (@name = extrabold), (@name = heavy) {
+        .weight(800);
+      }
+      & when (@name = poster), (@name = fat), (@name = ultrablack), (@name = extrablack) {
+        .weight(900);
+      }
+    }
+    
+    .rel(@rel) {
+      
+      & when(@rel = lighter) {
+        .index(1);
+      }
+      
+      & when(@rel = light) {
+        .index(max(round(length(@_weights) / 2) - 1, 1));
+      }
+      
+      & when(@rel = normal) {
+        .index(round(length(@_weights) / 2));
+      }
+      
+      & when(@rel = bold) {
+        .index(min(round(length(@_weights) / 2) + 1, length(@_weights)));
+      }
+      
+      & when(@rel = bolder) {
+        .index(length(@_weights));
+      }
+      
+    }
+  }
+  
+  .index(@index) {
+    .weight(extract(@_weights, @index));
+  }
+}
