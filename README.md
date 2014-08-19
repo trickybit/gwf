@@ -76,7 +76,7 @@ h1 {
 }
 ```
 ### params
-- index {integer}
+- name {keyword}
   - lighter
   - light
   - normal
